@@ -19,45 +19,108 @@
   </head>
   <body>
     <div class="container">
-      <h1>
-        forecast
-        <span>Curent location</span>
-        <span>Today</span>
-      </h1>
-      <div class="row">
-        <div class="col-md-5">
-          Voice of humor
-          <p>
-            <img
-              src="https://i.pinimg.com/736x/5c/ff/80/5cff802d48d74607ac929ec2751684e9--straight-lines.jpg"
-              alt="line"
-            />
-          </p>
-          <p>Search city</p>
-        </div>
-        <div class="col-md-2">
-          12 °C |°F
-          <p>
-            Cloudy
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-              alt="cloudy"
-            />
-          </p>
-          <p>Monday 27, july '20</p>
-        </div>
-        <div class="col-md-2">
-          <ul>
-            <li>RealFeel 37°</li>
-            <li>Humidity: 66%</li>
-            <li>UV Index: 0 Low</li>
-            <li>Cloud Cover: 45%</li>
-            <li>Visibility: 5 km</li>
-            <li>Wind: 5 km/h</li>
-          </ul>
+      <div class="weather-app">
+        <div
+          class="containerClear containerCloudy containerMist containerRaining containerSnow containerThunderstorm containerSunny"
+          id="background-image"
+        >
+          <div class="row">
+            <div class="col">
+              <div class="col-name">
+                <h1 id="name">forecast</h1>
+              </div>
+            </div>
+
+            <div class="col">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Curent location</span>
+              <span class="current-weather"></span>
+            </div>
+
+            <div class="col">
+              <span>Today</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5">
+              <div class="col-humor-quote">
+                <p id="quote">Voice of humor</p>
+              </div>
+              <p>
+                <img
+                  src="https://i.pinimg.com/736x/5c/ff/80/5cff802d48d74607ac929ec2751684e9--straight-lines.jpg"
+                  alt="line"
+                  width="200px"
+                />
+              </p>
+
+              <div class="row">
+                <div class="input-group mb-3">
+                  <form id="search-city">
+                    <div class="input-group mb-3">
+                      <input
+                        type="search"
+                        class="search-city"
+                        placeholder="Enter a city"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-addon2"
+                        id="city-input"
+                      />
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="button"
+                        id="button-addon2"
+                      >
+                        <i class="fa-regular fa-magnifying-glass"></i>
+                      </button>
+                    </div>
+                  </form>
+
+                  <i
+                    class="fa-solid fa-location-crosshairs"
+                    id="current-location"
+                  ></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="containerTodayWeather">
+                <div class="generalInfo">
+                  <h2 id="temperature">12</h2>
+                  <span id="units">
+                    <a href="#" class="celsius-link" id="celsius-link">°C </a>
+                    |
+                    <a href="#" class="fahrenheit-link" id="fahrenheit-link">
+                      °F</a
+                    >
+                  </span>
+                  <p id="description">
+                    Cloudy
+                    <img src="" alt="cloudy" id="icon" />
+                  </p>
+                  <div class="current-time-date">
+                    <p id="current-time-date-year">Monday 27, july '20</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <ul>
+                <li>RealFeel <span id="real-feel"></span>°</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>UV Index: <span id="uv-index"></span> Low</li>
+                <li>Cloud Cover: <span id="cloud-cover"></span>%</li>
+                <li>Visibility: <span id="visibility"></span> km</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <footer>
       <a
         href="https://github.com/ValeriiaHrytsenko/weather-app"

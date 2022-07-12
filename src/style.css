@@ -1,0 +1,80 @@
+body {
+  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  display: inline;
+  font-size: 18px;
+  font-weight: 300;
+  text-shadow: rgb(96, 96, 96) 1px 0 5px;;
+}
+
+.col-1 {
+  vertical-align: middle;
+}
+
+.today {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+h2 {
+  display: inline;
+  position: relative;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+footer {
+  color: #a3a3a3;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+
+.containerClear,
+.containerCloudy,
+.containerMist,
+.containerRaining,
+.containerSnow,
+.containerSunny,
+.containerThunderstorm {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 880px;
+  height: 530px;
+  border-radius: 15px;
+  margin: 80px auto;
+}
+
+.containerClear {
+  background-image;: url("../src/video/clear.mp4");
+}
+
+.containerCloudy {
+  background-image: url("../src/video/clouds.mp4");
+}
+
+.containerMist {
+  background-image: url("../src/video/mist.mp4");
+}
+
+.containerRaining {
+  background-image: url("../src/video/rain.mp4");
+}
+
+.containerSnow {
+  background-image: url("../src/video/snow.mp4");
+}
+
+.containerSunny {
+  background-image: url("../src/video/sunny.mp4");
+}
+
+.containerThunderstorm {
+  background-image: url("../src/video/thunderstorm.mp4");
+}
+
+

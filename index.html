@@ -11,110 +11,132 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="src/style.css" />
     <script
       src="https://kit.fontawesome.com/07e262bee8.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="scr/style.css" />
   </head>
   <body>
     <div class="container">
       <div class="weather-app">
-        <div
-          class="containerClear containerCloudy containerMist containerRaining containerSnow containerThunderstorm containerSunny"
-          id="background-image"
-        >
-          <div class="row">
-            <div class="col">
-              <div class="col-name">
-                <h1 id="name">forecast</h1>
-              </div>
-            </div>
-
-            <div class="col">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>Curent location</span>
-              <span class="current-weather"></span>
-            </div>
-
-            <div class="col">
-              <span>Today</span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-5">
-              <div class="col-humor-quote">
-                <p id="quote">Voice of humor</p>
-              </div>
-              <p>
-                <img
-                  src="https://i.pinimg.com/736x/5c/ff/80/5cff802d48d74607ac929ec2751684e9--straight-lines.jpg"
-                  alt="line"
-                  width="200px"
-                />
-              </p>
-
+        <div class="row">
+          <div class="col">
+            <div
+              class="containerClear containerCloudy containerMist containerRaining containerSnow containerSunny containerThunderstorm"
+              id="background-image"
+            >
               <div class="row">
-                <div class="input-group mb-3">
-                  <form id="search-city">
-                    <div class="input-group mb-3">
-                      <input
-                        type="search"
-                        class="search-city"
-                        placeholder="Enter a city"
-                        aria-label="Recipient's username"
-                        aria-describedby="button-addon2"
-                        id="city-input"
-                      />
-                      <button
-                        class="btn btn-outline-secondary"
-                        type="button"
-                        id="button-addon2"
-                      >
-                        <i class="fa-regular fa-magnifying-glass"></i>
-                      </button>
-                    </div>
-                  </form>
+                <div class="col-auto me-auto">
+                  <div class="col-name">
+                    <h1 id="name">forecast</h1>
+                  </div>
+                </div>
 
-                  <i
-                    class="fa-solid fa-location-crosshairs"
-                    id="current-location"
-                  ></i>
+                <div class="col-auto">
+                  <div class="containerLocation">
+                    <div class="row">
+                      <div class="col-md-auto">
+                        <i class="fa-solid fa-location-dot"></i>
+                      </div>
+                      <div class="col-md-auto">
+                        <ul>
+                          <li class="current-location">Current location</li>
+                          <li class="current-weather">Kyiv, Ukraine</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-2">
-              <div class="containerTodayWeather">
-                <div class="generalInfo">
-                  <h2 id="temperature">12</h2>
-                  <span id="units">
-                    <a href="#" class="celsius-link" id="celsius-link">°C </a>
-                    |
-                    <a href="#" class="fahrenheit-link" id="fahrenheit-link">
-                      °F</a
+              <div class="central">
+                <div class="col-humor-quote">
+                  <p id="quote">Voice of humor</p>
+                  <img
+                    src="src/video/line_horiz.png"
+                    alt="line"
+                    class="srcLine"
+                  />
+                </div>
+
+                <!-- added from open codepen https://codepen.io/kmuenster/pen/XWWeQGw -->
+
+                <link
+                  href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+                  rel="stylesheet"
+                />
+
+                <div class="wrapper">
+                  <div class="searchBar">
+                    <input
+                      id="searchQueryInput"
+                      type="text"
+                      name="searchQueryInput"
+                      placeholder="Enter location"
+                      value=""
+                    />
+                    <button
+                      id="searchQuerySubmit"
+                      type="submit"
+                      name="searchQuerySubmit"
                     >
-                  </span>
-                  <p id="description">
-                    Cloudy
-                    <img src="" alt="cloudy" id="icon" />
-                  </p>
-                  <div class="current-time-date">
-                    <p id="current-time-date-year">Monday 27, july '20</p>
+                      <svg
+                        style="width: 24px; height: 24px"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="rgb(255, 255, 255, 0.7)"
+                          d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
+                        />
+                      </svg>
+                    </button>
+
+                    <!-- end -->
+
+                    <button type="button" class="btn btn-link">
+                      <i class="fa-solid fa-location-crosshairs"></i>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
-              <ul>
-                <li>RealFeel <span id="real-feel"></span>°</li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>UV Index: <span id="uv-index"></span> Low</li>
-                <li>Cloud Cover: <span id="cloud-cover"></span>%</li>
-                <li>Visibility: <span id="visibility"></span> km</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-              </ul>
+          </div>
+
+          <div class="col">
+            <span class="today">Today</span>
+            <div class="containerTodayWeather">
+              <div class="row">
+                <div class="col">
+                  <div class="generalInfo">
+                    <h2 id="temperature">12</h2>
+                    <span id="units">
+                      <a href="#" class="celsius-link" id="celsius-link">°C </a>
+                      |
+                      <a href="#" class="fahrenheit-link" id="fahrenheit-link">
+                        °F</a
+                      >
+                    </span>
+                    <p id="description">
+                      Cloudy
+                      <img src="" alt="cloudy" id="icon" />
+                    </p>
+                    <div class="current-time-date">
+                      <p id="current-time-date-year">Monday 27, july '20</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <ul>
+                    <li>RealFeel <span id="real-feel"></span>°</li>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>UV Index: <span id="uv-index"></span> Low</li>
+                    <li>Cloud Cover: <span id="cloud-cover"></span>%</li>
+                    <li>Visibility: <span id="visibility"></span> km</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

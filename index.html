@@ -11,6 +11,14 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <script
       src="https://kit.fontawesome.com/07e262bee8.js"
@@ -107,7 +115,7 @@
             <span class="today">Today</span>
             <div class="containerTodayWeather">
               <div class="row">
-                <div class="col-5">
+                <div class="col-6">
                   <div class="generalInfo">
                     <span id="temperature"> 12</span>
                     <span id="units">
@@ -118,17 +126,25 @@
                       >
                     </span>
 
-                    <p id="description">
+                    <p
+                      id="description"
+                      style="font-weight: 500; font-size: 18px"
+                    >
                       Cloudy
                       <img
                         src="src/video/icon_cloudy.png"
                         alt="cloudy"
                         class="icon"
-                        style="width: 32px"
+                        style="width: 32px; margin-top: -6px"
                       />
                     </p>
                     <div class="current-time-date">
-                      <p id="current-time-date-year">Monday 27, july '20</p>
+                      <p
+                        id="current-time-date-year"
+                        style="font-weight: 500; font-size: 12px"
+                      >
+                        Monday 27, july
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -139,16 +155,17 @@
                     class="srcLineVertical"
                   />
                 </div>
-              </div>
-              <div class="col-4">
-                <ul>
-                  <li>RealFeel <span id="real-feel"></span>°</li>
-                  <li>Humidity: <span id="humidity"></span>%</li>
-                  <li>UV Index: <span id="uv-index"></span> Low</li>
-                  <li>Cloud Cover: <span id="cloud-cover"></span>%</li>
-                  <li>Visibility: <span id="visibility"></span> km</li>
-                  <li>Wind: <span id="wind"></span> km/h</li>
-                </ul>
+
+                <div class="col-4">
+                  <ul class="details">
+                    <li>RealFeel <span id="real-feel"></span>°</li>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>UV Index: <span id="uv-index"></span> Low</li>
+                    <li>Cloud Cover: <span id="cloud-cover"></span>%</li>
+                    <li>Visibility: <span id="visibility"></span> km</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

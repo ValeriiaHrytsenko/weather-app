@@ -107,9 +107,9 @@
             <span class="today">Today</span>
             <div class="containerTodayWeather">
               <div class="row">
-                <div class="col">
+                <div class="col-5">
                   <div class="generalInfo">
-                    <h2 id="temperature">12</h2>
+                    <span id="temperature"> 12</span>
                     <span id="units">
                       <a href="#" class="celsius-link" id="celsius-link">°C </a>
                       |
@@ -117,25 +117,38 @@
                         °F</a
                       >
                     </span>
+
                     <p id="description">
                       Cloudy
-                      <img src="" alt="cloudy" id="icon" />
+                      <img
+                        src="src/video/icon_cloudy.png"
+                        alt="cloudy"
+                        class="icon"
+                        style="width: 32px"
+                      />
                     </p>
                     <div class="current-time-date">
                       <p id="current-time-date-year">Monday 27, july '20</p>
                     </div>
                   </div>
                 </div>
-                <div class="col">
-                  <ul>
-                    <li>RealFeel <span id="real-feel"></span>°</li>
-                    <li>Humidity: <span id="humidity"></span>%</li>
-                    <li>UV Index: <span id="uv-index"></span> Low</li>
-                    <li>Cloud Cover: <span id="cloud-cover"></span>%</li>
-                    <li>Visibility: <span id="visibility"></span> km</li>
-                    <li>Wind: <span id="wind"></span> km/h</li>
-                  </ul>
+                <div class="col-1">
+                  <img
+                    src="src/video/line_vertical.png"
+                    alt="line"
+                    class="srcLineVertical"
+                  />
                 </div>
+              </div>
+              <div class="col-4">
+                <ul>
+                  <li>RealFeel <span id="real-feel"></span>°</li>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>UV Index: <span id="uv-index"></span> Low</li>
+                  <li>Cloud Cover: <span id="cloud-cover"></span>%</li>
+                  <li>Visibility: <span id="visibility"></span> km</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
+                </ul>
               </div>
             </div>
           </div>

@@ -13,8 +13,6 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -24,6 +22,7 @@
       src="https://kit.fontawesome.com/07e262bee8.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -50,7 +49,10 @@
                       <div class="col-md-auto">
                         <ul>
                           <li class="current-location">Current location</li>
-                          <li class="current-weather">Kyiv, Ukraine</li>
+                          <li class="current-weather">
+                            <span id="city"></span>,
+                            <span id="country"></span>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -62,7 +64,7 @@
                 <div class="col-humor-quote">
                   <p id="quote">Voice of humor</p>
                   <img
-                    src="src/video/line_horiz.png"
+                    src="media/images/line_horiz.png"
                     alt="line"
                     class="srcLine"
                   />
@@ -76,36 +78,42 @@
                 />
 
                 <div class="wrapper">
-                  <div class="searchBar">
-                    <input
-                      id="searchQueryInput"
-                      type="text"
-                      name="searchQueryInput"
-                      placeholder="Enter location"
-                      value=""
-                    />
-                    <button
-                      id="searchQuerySubmit"
-                      type="submit"
-                      name="searchQuerySubmit"
-                    >
-                      <svg
-                        style="width: 24px; height: 24px"
-                        viewBox="0 0 24 24"
+                  <form id="search-form">
+                    <div class="searchBar">
+                      <input
+                        id="searchQueryInput"
+                        type="text"
+                        name="searchQueryInput"
+                        placeholder="Enter location"
+                        value=""
+                      />
+                      <button
+                        id="searchQuerySubmit"
+                        type="submit"
+                        name="searchQuerySubmit"
                       >
-                        <path
-                          fill="rgb(255, 255, 255, 0.7)"
-                          d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
-                        />
-                      </svg>
-                    </button>
+                        <svg
+                          style="width: 24px; height: 24px"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="rgb(255, 255, 255, 0.7)"
+                            d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
+                          />
+                        </svg>
+                      </button>
 
-                    <!-- end -->
+                      <!-- end -->
 
-                    <button type="button" class="btn btn-link">
-                      <i class="fa-solid fa-location-crosshairs"></i>
-                    </button>
-                  </div>
+                      <button
+                        type="button"
+                        class="btn btn-link"
+                        id="btn-current-position"
+                      >
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -117,7 +125,7 @@
               <div class="row">
                 <div class="col-6">
                   <div class="generalInfo">
-                    <span id="temperature"> 12</span>
+                    <span id="temperature"></span>
                     <span id="units">
                       <a href="#" class="celsius-link" id="celsius-link">°C </a>
                       |
@@ -126,31 +134,30 @@
                       >
                     </span>
 
-                    <p
+                    <span
                       id="description"
                       style="font-weight: 500; font-size: 18px"
-                    >
-                      Cloudy
-                      <img
-                        src="src/video/icon_cloudy.png"
-                        alt="cloudy"
-                        class="icon"
-                        style="width: 32px; margin-top: -6px"
-                      />
-                    </p>
+                    ></span>
+
+                    <img
+                      src=""
+                      alt=""
+                      class="icon"
+                      id="icon"
+                      style="width: 32px; margin-top: -6px"
+                    />
+
                     <div class="current-time-date">
                       <p
                         id="current-time-date-year"
                         style="font-weight: 500; font-size: 12px"
-                      >
-                        Monday 27, july
-                      </p>
+                      ></p>
                     </div>
                   </div>
                 </div>
                 <div class="col-1">
                   <img
-                    src="src/video/line_vertical.png"
+                    src="media/images/line_vertical.png"
                     alt="line"
                     class="srcLineVertical"
                   />

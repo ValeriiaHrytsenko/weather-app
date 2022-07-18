@@ -34,31 +34,31 @@ body {
 }
 
 .containerClear {
-  background-image: url("../src/video/clear.gif");
+  background-image: url("../media/background-gif/clear.gif");
 }
 
 .containerCloudy {
-  background-image: url("../src/video/clouds.gif");
+  background-image: url("../media/background-gif/clouds.gif");
 }
 
 .containerMist {
-  background-image: url("../src/video/mist.gif");
+  background-image: url("../media/background-gif/mist.gif");
 }
 
 .containerRaining {
-  background-image: url("../src/video/rain.mp4");
+  background-image: url("../media/background-gif/rain.gif");
 }
 
 .containerSnow {
-  background-image: url("../src/video/snow.gif");
+  background-image: url("../media/background-gif/snow.gif");
 }
 
 .containerSunny {
-  background-image: url("../src/video/sunny.gif");
+  background-image: url("../media/background-gif/sunny.gif");
 }
 
 .containerThunderstorm {
-  background-image: url("../src/video/thunderstorm.gif");
+  background-image: url("../media/background-gif/thunderstorm.gif");
 }
 
 .col-name {
@@ -247,6 +247,10 @@ input::placeholder {
 }
 
 /* end */
+
+.current-time-date {
+  margin-top: 15px;
+}
 
 .col-1 {
   padding: 0;

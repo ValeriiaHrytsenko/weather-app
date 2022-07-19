@@ -276,6 +276,34 @@ input::placeholder {
   letter-spacing: 0.05em;
 }
 
+/* daily */
+
+.daily {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 18px 0 10px 0;
+}
+
+.col-md-4 {
+  width: 125px;
+  height: 125px;
+  margin-left: 14px;
+  padding-top: 7px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 10px 3px;
+}
+
+.forecast-daily-temperature {
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.daily-description {
+  margin-top: 15px;
+}
+
 /* footer */
 footer {
   color: #a3a3a3;

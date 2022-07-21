@@ -17,6 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <script
       src="https://kit.fontawesome.com/07e262bee8.js"
@@ -48,7 +56,7 @@
                         <i class="fa-solid fa-location-dot"></i>
                       </div>
                       <div class="col-md-auto">
-                        <ul>
+                        <ul class="location-box">
                           <li class="current-location">Current location</li>
                           <li class="current-weather">
                             <span id="city"></span>,
@@ -176,37 +184,256 @@
                 </div>
               </div>
             </div>
-
-            <span class="daily">Daily</span>
-            <div class="forecast-daily">
-              <div class="row">
-                <div class="col-md-4">
-                  <span class="forecast-daily-temperature">28°</span>
-                  <div class="daily-description">
-                    <span
-                      class="forecast-daily-description"
-                      style="font-weight: 500; font-size: 14px"
-                    >
-                      Cloudy</span
-                    >
-
-                    <img
-                      src="media/weather-icons/02d.png"
-                      alt=""
-                      class="icon"
-                      id="icon"
-                      style="width: 24px; margin-top: -6px"
-                    />
+            <div class="container_2">
+              <div class="hs__wrapper">
+                <div class="hs__header">
+                  <h2 class="hs__headline">Daily</h2>
+                  <div class="hs__arrows">
+                    <a class="arrow disabled arrow-prev"></a
+                    ><a class="arrow arrow-next"></a>
                   </div>
+                </div>
+                <div class="hs__body">
+                  <ul class="hs">
+                    <li class="hs__item" style="">
+                      <div class="hs__item__content__wrapper">
+                        <span class="forecast-daily-temperature">28°</span>
+                        <div class="daily-description">
+                          <span
+                            class="forecast-daily-description"
+                            style="font-weight: 500; font-size: 14px"
+                          >
+                            Cloudy</span
+                          >
 
-                  <div class="forecast-daily-date">
-                    <p
-                      id="forecast-daily-date-year"
-                      style="font-weight: 500; font-size: 11px; margin-top: 7px"
-                    >
-                      Wen, 20 Jul
-                    </p>
-                  </div>
+                          <img
+                            src="media/weather-icons/02d.png"
+                            alt=""
+                            class="icon"
+                            id="icon"
+                            style="width: 24px; margin-top: -6px"
+                          />
+                        </div>
+
+                        <div class="forecast-daily-date">
+                          <p
+                            id="forecast-daily-date-year"
+                            style="
+                              font-weight: 500;
+                              font-size: 11px;
+                              margin-top: 7px;
+                            "
+                          >
+                            Wen, 20 Jul
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="hs__item">
+                      <div class="hs__item__content__wrapper">
+                        <span class="forecast-daily-temperature">28°</span>
+                        <div class="daily-description">
+                          <span
+                            class="forecast-daily-description"
+                            style="font-weight: 500; font-size: 14px"
+                          >
+                            Cloudy</span
+                          >
+
+                          <img
+                            src="media/weather-icons/02d.png"
+                            alt=""
+                            class="icon"
+                            id="icon"
+                            style="width: 24px; margin-top: -6px"
+                          />
+                        </div>
+
+                        <div class="forecast-daily-date">
+                          <p
+                            id="forecast-daily-date-year"
+                            style="
+                              font-weight: 500;
+                              font-size: 11px;
+                              margin-top: 7px;
+                            "
+                          >
+                            Wen, 20 Jul
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="hs__item">
+                      <div class="hs__item__content__wrapper">
+                        <span class="forecast-daily-temperature">28°</span>
+                        <div class="daily-description">
+                          <span
+                            class="forecast-daily-description"
+                            style="font-weight: 500; font-size: 14px"
+                          >
+                            Cloudy</span
+                          >
+
+                          <img
+                            src="media/weather-icons/02d.png"
+                            alt=""
+                            class="icon"
+                            id="icon"
+                            style="width: 24px; margin-top: -6px"
+                          />
+                        </div>
+
+                        <div class="forecast-daily-date">
+                          <p
+                            id="forecast-daily-date-year"
+                            style="
+                              font-weight: 500;
+                              font-size: 11px;
+                              margin-top: 7px;
+                            "
+                          >
+                            Wen, 20 Jul
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="hs__item">
+                      <div class="hs__item__content__wrapper">
+                        <span class="forecast-daily-temperature">28°</span>
+                        <div class="daily-description">
+                          <span
+                            class="forecast-daily-description"
+                            style="font-weight: 500; font-size: 14px"
+                          >
+                            Cloudy</span
+                          >
+
+                          <img
+                            src="media/weather-icons/02d.png"
+                            alt=""
+                            class="icon"
+                            id="icon"
+                            style="width: 24px; margin-top: -6px"
+                          />
+                        </div>
+
+                        <div class="forecast-daily-date">
+                          <p
+                            id="forecast-daily-date-year"
+                            style="
+                              font-weight: 500;
+                              font-size: 11px;
+                              margin-top: 7px;
+                            "
+                          >
+                            Wen, 20 Jul
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="hs__item">
+                      <div class="hs__item__content__wrapper">
+                        <span class="forecast-daily-temperature">28°</span>
+                        <div class="daily-description">
+                          <span
+                            class="forecast-daily-description"
+                            style="font-weight: 500; font-size: 14px"
+                          >
+                            Cloudy</span
+                          >
+
+                          <img
+                            src="media/weather-icons/02d.png"
+                            alt=""
+                            class="icon"
+                            id="icon"
+                            style="width: 24px; margin-top: -6px"
+                          />
+                        </div>
+
+                        <div class="forecast-daily-date">
+                          <p
+                            id="forecast-daily-date-year"
+                            style="
+                              font-weight: 500;
+                              font-size: 11px;
+                              margin-top: 7px;
+                            "
+                          >
+                            Wen, 20 Jul
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="hs__item">
+                      <div class="hs__item__content__wrapper">
+                        <span class="forecast-daily-temperature">28°</span>
+                        <div class="daily-description">
+                          <span
+                            class="forecast-daily-description"
+                            style="font-weight: 500; font-size: 14px"
+                          >
+                            Cloudy</span
+                          >
+
+                          <img
+                            src="media/weather-icons/02d.png"
+                            alt=""
+                            class="icon"
+                            id="icon"
+                            style="width: 24px; margin-top: -6px"
+                          />
+                        </div>
+
+                        <div class="forecast-daily-date">
+                          <p
+                            id="forecast-daily-date-year"
+                            style="
+                              font-weight: 500;
+                              font-size: 11px;
+                              margin-top: 7px;
+                            "
+                          >
+                            Wen, 20 Jul
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="hs__item">
+                      <div class="hs__item__content__wrapper">
+                        <span class="forecast-daily-temperature">28°</span>
+                        <div class="daily-description">
+                          <span
+                            class="forecast-daily-description"
+                            style="font-weight: 500; font-size: 14px"
+                          >
+                            Cloudy</span
+                          >
+
+                          <img
+                            src="media/weather-icons/02d.png"
+                            alt=""
+                            class="icon"
+                            id="icon"
+                            style="width: 24px; margin-top: -6px"
+                          />
+                        </div>
+
+                        <div class="forecast-daily-date">
+                          <p
+                            id="forecast-daily-date-year"
+                            style="
+                              font-weight: 500;
+                              font-size: 11px;
+                              margin-top: 7px;
+                            "
+                          >
+                            Wen, 20 Jul
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -232,5 +459,6 @@
       >
     </footer>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="src/app.js"></script>
 </html>

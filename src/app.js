@@ -53,6 +53,58 @@ currentTimeSettings.innerHTML = formatDate(new Date());
 
 // end of date
 
+// try function forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<ul class="hs">`;
+  let days = ["Mon", "Tue", "Wen", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <li class="hs__item" style="">
+                      <div class="hs__item__content__wrapper">
+                        <span class="forecast-daily-temperature">28°</span>
+                        <div class="daily-description">
+                          <span
+                            class="forecast-daily-description"
+                            style="font-weight: 500; font-size: 14px"
+                          >
+                            Cloudy</span
+                          >
+
+                          <img
+                            src="media/weather-icons/02d.png"
+                            alt=""
+                            class="icon"
+                            id="icon"
+                            style="width: 24px; margin-top: -6px"
+                          />
+                        </div>
+
+                        <div class="forecast-daily-date">
+                          <p
+                            id="forecast-daily-date-year"
+                            style="
+                              font-weight: 500;
+                              font-size: 11px;
+                              margin-top: 7px;
+                            "
+                          >
+                            ${day}, 20 Jul
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    `;
+  });
+
+  forecastHTML = forecastHTML + `</ul>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Showing details
 //
 
@@ -88,6 +140,9 @@ function defaultCity(response) {
     `media/weather-icons/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
+
+  // long background selector
+  // try to do it shorten in future
 
   let weatherSituation = response.data.weather[0].main;
   if (weatherSituation === "Clear") {
@@ -327,12 +382,15 @@ function defaultCity(response) {
   }
 }
 
+// end of showing details function DgaultCity
+
 function search(city) {
   let apiKey = `d506e4c0e70891d876c92964c23e687b`;
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlCity).then(defaultCity);
 }
 
+// handlesumbit
 function submitCity(event) {
   event.preventDefault();
 
@@ -382,6 +440,7 @@ let currentLocationLink = document.querySelector("#btn-current-position");
 currentLocationLink.addEventListener("click", getCurrentLocation);
 
 search("Kyiv");
+displayForecast();
 
 // container_2
 

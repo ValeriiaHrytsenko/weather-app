@@ -105,6 +105,16 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+// Api for forecast
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `d506e4c0e70891d876c92964c23e687b`;
+  let apiUrl = `api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt={7}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // Showing details
 //
 
@@ -140,6 +150,8 @@ function defaultCity(response) {
     `media/weather-icons/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 
   // long background selector
   // try to do it shorten in future

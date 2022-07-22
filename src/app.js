@@ -53,30 +53,65 @@ currentTimeSettings.innerHTML = formatDate(new Date());
 
 // end of date
 
+// end of datefunction
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Mon", "Tue", "Wen", "Thu", "Fri", "Sat", "Sun"];
+  let weekDays = days[date.getDay()];
+  let day = date.getDate();
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+
+  let formatedDate = `${weekDays}, ${day} ${month}`;
+
+  return formatedDate;
+}
+
 // try function forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<ul class="hs">`;
-  let days = ["Mon", "Tue", "Wen", "Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
       <li class="hs__item" style="">
                       <div class="hs__item__content__wrapper">
-                        <span class="forecast-daily-temperature">28°</span>
+                        <span class="forecast-daily-temperature">${Math.round(
+                          forecastDay.temp.day
+                        )}°</span>
                         <div class="daily-description">
                           <span
                             class="forecast-daily-description"
                             style="font-weight: 500; font-size: 14px"
                           >
-                            Cloudy</span
+                            ${forecastDay.weather[0].main}</span
                           >
 
                           <img
-                            src="media/weather-icons/02d.png"
+                            src="media/weather-icons/${
+                              forecastDay.weather[0].icon
+                            }.png"
                             alt=""
                             class="icon"
                             id="icon"
@@ -93,12 +128,13 @@ function displayForecast() {
                               margin-top: 7px;
                             "
                           >
-                            ${day}, 20 Jul
+                            ${formatDay(forecastDay.dt)}
                           </p>
                         </div>
                       </div>
                     </li>
                     `;
+    }
   });
 
   forecastHTML = forecastHTML + `</ul>`;
@@ -110,12 +146,11 @@ function displayForecast() {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = `d506e4c0e70891d876c92964c23e687b`;
-  let apiUrl = `api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt={7}&appid=${apiKey}&units=metric`;
-
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
-// Showing details
+// Showing detailsrecast
 //
 
 function defaultCity(response) {
@@ -452,7 +487,6 @@ let currentLocationLink = document.querySelector("#btn-current-position");
 currentLocationLink.addEventListener("click", getCurrentLocation);
 
 search("Kyiv");
-displayForecast();
 
 // container_2
 
